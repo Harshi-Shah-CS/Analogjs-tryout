@@ -14,10 +14,13 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     analog({
-      ssr: false,
-      static: true,
+      ssr: true, // Required for prerendering
+      static: true, // Only prerender static pages without building the server
       prerender: {
-        routes: [],
+        routes: async () => [
+          '/',
+          '/about',
+        ],
       },
     }),
     tailwindcss()

@@ -14,6 +14,9 @@ import { Component } from '@angular/core';
         Sponsor
       </a>
     </p>
+    <p style="margin-top: 2rem;">
+      <a href="/about">Visit About Page (SSG)</a>
+    </p>
   `,
   styles: `
     :host {
