@@ -14,12 +14,13 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     analog({
-      ssr: true, // Required for prerendering
-      static: true, // Only prerender static pages without building the server
+      ssr: true, // Required for prerendering and SSR
+      static: false, // Allow SSR for non-prerendered routes
       prerender: {
         routes: async () => [
           '/',
           '/about',
+          '/ssg',
         ],
       },
     }),
