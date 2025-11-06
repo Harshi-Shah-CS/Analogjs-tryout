@@ -2,8 +2,7 @@
   "redirects": [
     {
       "source": "/about",
-      "destination": "/ssg",
-      "permanent": true
+      "destination": "/ssg"
     }
   ],
   "rewrites": [
