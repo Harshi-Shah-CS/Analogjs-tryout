@@ -1,0 +1,15 @@
+{
+  "rewrites": [
+    {
+      "source": "/ssg",
+      "destination": "/shuffle-products",
+      "response": {
+        "headers": {
+          "x-rewrite": "true",
+          "x-powered-by": "Contentstack Launch"
+        }
+      }
+    }
+  ]
+}
+
