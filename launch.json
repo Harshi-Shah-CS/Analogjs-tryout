@@ -8,8 +8,8 @@
   ],
   "rewrites": [
     {
-      "source": "/ssg",
-      "destination": "/shuffle-products"
+      "source": "/shuffle-products",
+      "destination": "/ssg"
     }
   ]
 }
