@@ -1,7 +1,5 @@
 /**
  * Contentstack Launch Edge Function
- * Based on: https://www.contentstack.com/docs/developers/launch/edge-functions
- * 
  * Redirect from /about to /ssg
  */
 
