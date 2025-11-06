@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/about",
+      "destination": "/ssg",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/ssg",
