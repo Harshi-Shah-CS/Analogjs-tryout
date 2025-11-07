@@ -22,6 +22,7 @@ export default defineConfig(({ mode }) => ({
           '/about',
           '/ssg',
           '/test',
+          '/products',
         ],
       },
     }),
