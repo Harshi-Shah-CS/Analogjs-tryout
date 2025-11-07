@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/shuffle-products",
-      "destination": "/ssg"
+      "source": "/products",
+      "destination": "/test"
     }
   ]
 }
