@@ -4,12 +4,6 @@
       "source": "/about",
       "destination": "/ssg"
     }
-  ],
-  "rewrites": [
-    {
-      "source": "/shuffle-products",
-      "destination": "/ssg"
-    }
   ]
 }
 
