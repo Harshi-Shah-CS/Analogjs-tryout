@@ -1,7 +1,7 @@
 {
-  "redirects": [
+  "rewrites": [
     {
-      "source": "/about",
+      "source": "/shuffle-products",
       "destination": "/ssg"
     }
   ]
