@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/products",
-      "destination": "/test"
+      "source": "/products-static",
+      "destination": "/test-static.html"
     }
   ]
 }
