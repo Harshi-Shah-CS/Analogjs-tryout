@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/products",
-      "destination": "https://analogjs-tryout.devcontentstackapps.com/test"
+      "destination": "/test"
     }
   ]
 }
