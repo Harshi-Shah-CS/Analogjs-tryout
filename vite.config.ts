@@ -22,8 +22,17 @@ export default defineConfig(({ mode }) => ({
           '/about',
           '/ssg',
           '/test',
-          // '/products' - NOT prerendered, launch.json rewrite handles it
+          // '/products' - NOT prerendered, handled by SSR
         ],
+      },
+      nitro: {
+        routeRules: {
+          '/products': { proxy: '/test' },
+        },
+        preset: 'node-server',
+        output: {
+          dir: 'dist/server', // 👈 Simplified path for Launch
+        },
       },
     }),
     tailwindcss()
