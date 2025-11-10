@@ -1,9 +1,5 @@
 {
   "rewrites": [
-    {
-      "source": "/products",
-      "destination": "/test"
-    }
   ]
 }
 
