@@ -22,7 +22,7 @@ export default defineConfig(({ mode }) => ({
           '/about',
           '/ssg',
           '/test',
-          '/products',
+          // '/products', // Removed - we don't want to generate this static page
         ],
       },
     }),
