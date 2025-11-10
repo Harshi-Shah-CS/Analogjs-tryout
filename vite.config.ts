@@ -29,6 +29,8 @@ export default defineConfig(({ mode }) => ({
         routeRules: {
           '/products': { proxy: '/test' },
         },
+        preset: 'node-server',
+        serveStatic: true,
       },
     }),
     tailwindcss()
