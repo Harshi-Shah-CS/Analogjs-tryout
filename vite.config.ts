@@ -22,8 +22,13 @@ export default defineConfig(({ mode }) => ({
           '/about',
           '/ssg',
           '/test',
-          '/products', // Now renders the same content as /test
+          // '/products' - NOT prerendered, handled by SSR
         ],
+      },
+      nitro: {
+        routeRules: {
+          '/products': { proxy: '/test' },
+        },
       },
     }),
     tailwindcss()

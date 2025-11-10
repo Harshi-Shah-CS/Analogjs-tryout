@@ -4,10 +4,9 @@ import { Component } from '@angular/core';
   selector: 'app-products',
   template: `
     <div>
-      <h1>Test Page</h1>
-      <p>If you see this content, the rewrite is working!</p>
-      <p>URL should show: /products</p>
-      <p>Content from: /test</p>
+      <h1>Products Page</h1>
+      <p>This is the ORIGINAL products page content.</p>
+      <p>You should NOT see this if rewrite works!</p>
       <a href="/">Back to Home</a>
     </div>
   `,
@@ -18,9 +17,8 @@ import { Component } from '@angular/core';
     }
     
     h1 {
-      color: #646cff;
+      color: #ff6b6b;
     }
   `,
 })
 export default class Products {}
-
