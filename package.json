@@ -8,7 +8,7 @@
   "scripts": {
     "ng": "ng",
     "dev": "vite",
-    "start": "node dist/analog/server/index.mjs",
+    "start": "npm run preview",
     "build": "vite build",
     "watch": "vite build --watch",
     "test": "vitest",

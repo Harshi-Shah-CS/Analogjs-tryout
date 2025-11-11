@@ -22,7 +22,6 @@ export default defineConfig(({ mode }) => ({
           '/about',
           '/ssg',
           '/test',
-          // '/products' - NOT prerendered, handled by SSR
         ],
       },
       nitro: {
@@ -30,7 +29,6 @@ export default defineConfig(({ mode }) => ({
           '/products': { proxy: '/test' },
         },
         preset: 'node-server',
-        // No custom output - uses default dist/analog/server/
       },
     }),
     tailwindcss()
