@@ -26,7 +26,7 @@ export default defineConfig(({ mode }) => ({
       },
       nitro: {
         routeRules: {
-          '/products*': { proxy: '/test' },
+          '/products': { proxy: '/test' },
         },
       },
     }),
