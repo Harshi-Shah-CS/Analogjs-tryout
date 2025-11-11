@@ -26,7 +26,12 @@ export default defineConfig(({ mode }) => ({
       },
       nitro: {
         routeRules: {
-          '/products': { proxy: '/test' },
+          '/products': { 
+            proxy: '/test',
+            headers: {
+              'cache-control': 'no-cache, no-store, must-revalidate'
+            }
+          },
         },
       },
     }),
