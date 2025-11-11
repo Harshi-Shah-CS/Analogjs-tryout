@@ -21,7 +21,8 @@ export default defineConfig(({ mode }) => ({
           '/',
           '/about',
           '/ssg',
-          '/test',
+          '/test', // Edge Function will fetch this when /products is requested
+          // '/products' - NOT prerendered, Edge Function handles the rewrite
         ],
       },
     }),
