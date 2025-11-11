@@ -24,16 +24,6 @@ export default defineConfig(({ mode }) => ({
           '/test',
         ],
       },
-      nitro: {
-        routeRules: {
-          '/products': { 
-            proxy: '/test',
-            headers: {
-              'cache-control': 'no-cache, no-store, must-revalidate'
-            }
-          },
-        },
-      },
     }),
     tailwindcss()
   ],
