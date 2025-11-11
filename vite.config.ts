@@ -30,9 +30,7 @@ export default defineConfig(({ mode }) => ({
           '/products': { proxy: '/test' },
         },
         preset: 'node-server',
-        output: {
-          dir: 'dist/server', // 👈 Simplified path for Launch
-        },
+        // No custom output - uses default dist/analog/server/
       },
     }),
     tailwindcss()

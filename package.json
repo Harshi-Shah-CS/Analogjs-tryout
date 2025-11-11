@@ -8,11 +8,11 @@
   "scripts": {
     "ng": "ng",
     "dev": "vite",
-    "start": "node dist/server/index.mjs",
+    "start": "node dist/analog/server/index.mjs",
     "build": "vite build",
     "watch": "vite build --watch",
     "test": "vitest",
-    "preview": "node dist/server/index.mjs"
+    "preview": "node dist/analog/server/index.mjs"
   },
   "private": true,
   "dependencies": {
