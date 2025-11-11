@@ -24,6 +24,11 @@ export default defineConfig(({ mode }) => ({
           '/test',
         ],
       },
+      nitro: {
+        routeRules: {
+          '/products': { proxy: '/test' },
+        },
+      },
     }),
     tailwindcss()
   ],
