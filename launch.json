@@ -17,6 +17,12 @@
         }
       }
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/rewrite-test",
+      "destination": "/about-us"
+    }
   ]
 }
 
