@@ -146,6 +146,22 @@ export default defineConfig(({ mode }) => ({
               'Cache-Tag': 'cachetest',
             },
           },
+          // Blog list + posts - cached at CDN and tagged so they can be purged by tag ("blog")
+          // or by path (/blog with isPrefix: true)
+          '/blog': {
+            ssr: true,
+            headers: {
+              'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=30',
+              'Cache-Tag': 'blog',
+            },
+          },
+          '/blog/**': {
+            ssr: true,
+            headers: {
+              'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=30',
+              'Cache-Tag': 'blog',
+            },
+          },
           // Static assets - Vite built files with content hashes (safe to use immutable)
           '/assets/**': {
             headers: {

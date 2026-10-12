@@ -23,24 +23,11 @@ import { CommonModule } from '@angular/common';
       <div class="revalidate-section">
         <h2>Revalidate Cache</h2>
         <div class="button-container">
-          <button
-            (click)="handleRevalidateCache()"
-            [disabled]="isLoading()"
-            [class]="getButtonClass()"
-          >
-            <span *ngIf="isLoading()" class="button-content">
-              <svg class="spinner" viewBox="0 0 24 24">
-                <circle class="spinner-circle" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"/>
-                <path class="spinner-path" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/>
-              </svg>
-              <span>Revalidating Cache...</span>
-            </span>
-            <span *ngIf="!isLoading()" class="button-content">
-              <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-              </svg>
-              <span>Revalidate Cache</span>
-            </span>
+          <button (click)="handleRevalidateCache('tag')" [disabled]="isLoading()" [class]="getButtonClass()">
+            <span>{{ isLoading() ? 'Revalidating...' : 'Revalidate by Cache Tag (cachetest)' }}</span>
+          </button>
+          <button (click)="handleRevalidateCache('path')" [disabled]="isLoading()" [class]="getButtonClass()">
+            <span>{{ isLoading() ? 'Revalidating...' : 'Revalidate by Cache Path (/cache-purge)' }}</span>
           </button>
         </div>
 
@@ -210,7 +197,14 @@ export default class CacheRevalidatePage {
       : 'message message-error';
   }
 
-  async handleRevalidateCache(): Promise<void> {
+  // Launch accepts only ONE of cachePath / cacheTags / hostnames per request
+  private buildPayload(mode: 'tag' | 'path') {
+    return mode === 'tag'
+      ? { cacheTags: ['cachetest'] }
+      : { cachePath: '/cache-purge', isPrefix: false };
+  }
+
+  async handleRevalidateCache(mode: 'tag' | 'path'): Promise<void> {
     this.isLoading.set(true);
     this.message.set('');
 
@@ -220,10 +214,7 @@ export default class CacheRevalidatePage {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          timestamp: new Date().toISOString(),
-          page: '/cache-revalidate',
-        }),
+        body: JSON.stringify(this.buildPayload(mode)),
       });
 
       if (response.ok) {
