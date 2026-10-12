@@ -87,6 +87,13 @@ export default defineConfig(({ mode }) => ({
               'Content-Type': 'application/xml',
             },
           },
+          // Home page - ISR (CDN caches, regenerates in background every 40 seconds)
+          '/': {
+            ssr: true,
+            headers: {
+              'Cache-Control': 'public, s-maxage=40, stale-while-revalidate=60',
+            },
+          },
           // SSR route should be server-rendered on each request (not prerendered)
           '/ssr': {
             ssr: true,
